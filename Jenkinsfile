@@ -6,5 +6,11 @@ pipeline {
                 sh 'go version'
             }
         }
+        stage('SonarQube Analysis') {
+            def scannerHome = tool 'sonarqube-local';
+            withSonarQubeEnv() {
+              sh "${scannerHome}/bin/sonar-scanner"
+            }
+          }
     }
 }
