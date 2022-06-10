@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'golang:1.17.5-alpine' } }
+    agent { docker { image '1.18.3-bullseye' } }
     stages {
         stage('build') {
             steps {
